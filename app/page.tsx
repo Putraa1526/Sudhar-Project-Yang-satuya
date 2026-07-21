@@ -5,64 +5,109 @@ export default function Home() {
     <main
       style={{
         minHeight: "100vh",
-        backgroundColor: "#f5f5f5",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        background: "linear-gradient(135deg,#2563eb,#60a5fa)",
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <div
+      {/* Navbar */}
+      <nav
         style={{
-          width: "420px",
-          background: "#ffffff",
-          padding: "40px",
-          borderRadius: "15px",
-          boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
-          textAlign: "center",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "20px 70px",
+          background: "#fff",
+          boxShadow: "0 2px 10px rgba(0,0,0,.1)",
         }}
       >
-        <h1 style={{ color: "#000" }}>Website Profile</h1>
+        <h2 style={{ color: "#2563eb" }}>Sudharmiko Web</h2>
 
-        <p style={{ color: "#555", marginBottom: "30px" }}>
-          Sri Putra Arkananta & Muhammad Nur Hafizh AMIRULLAH
-        </p>
+        <div>
+          <Link href="/" style={navLink}>
+            Home
+          </Link>
 
-        <Link href="/Profile">
-          <button
-            style={{
-              width: "100%",
-              padding: "12px",
-              marginBottom: "15px",
-              background: "#2563eb",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-              fontSize: "16px",
-              cursor: "pointer",
-            }}
-          >
+          <Link href="/Profile" style={navLink}>
             Profile
-          </button>
-        </Link>
+          </Link>
 
-        <Link href="/Portofolio">
-          <button
+          <Link href="/Portofolio" style={navLink}>
+            Portofolio
+          </Link>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "85vh",
+          color: "white",
+          textAlign: "center",
+          padding: "20px",
+        }}
+      >
+        <div>
+          <h1 style={{ fontSize: "55px", marginBottom: "20px" }}>
+            Selamat Datang 👋
+          </h1>
+
+          <p
             style={{
-              width: "100%",
-              padding: "12px",
-              background: "#16a34a",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-              fontSize: "16px",
-              cursor: "pointer",
+              fontSize: "20px",
+              maxWidth: "700px",
+              margin: "auto",
             }}
           >
-            Portofolio
-          </button>
-        </Link>
-      </div>
+            Website sederhana menggunakan <b>Next.js</b> yang berisi
+            halaman Profile dan Portofolio.
+          </p>
+
+          <div style={{ marginTop: "40px" }}>
+            <Link href="/Profile">
+              <button style={buttonBlue}>
+                Lihat Profile
+              </button>
+            </Link>
+
+            <Link href="/Portofolio">
+              <button style={buttonWhite}>
+                Lihat Portofolio
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
+
+const navLink = {
+  marginLeft: "25px",
+  textDecoration: "none",
+  color: "#111",
+  fontWeight: "bold",
+};
+
+const buttonBlue = {
+  padding: "14px 28px",
+  marginRight: "20px",
+  border: "none",
+  borderRadius: "10px",
+  background: "#1d4ed8",
+  color: "white",
+  cursor: "pointer",
+  fontSize: "16px",
+};
+
+const buttonWhite = {
+  padding: "14px 28px",
+  border: "none",
+  borderRadius: "10px",
+  background: "white",
+  color: "#2563eb",
+  cursor: "pointer",
+  fontSize: "16px",
+};
